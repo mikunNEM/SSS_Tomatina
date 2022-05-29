@@ -10,6 +10,13 @@ h1 {
   margin-right: 80px;
 }
 
+h4 {
+  color:rgb(161, 76, 194);
+  font-size: 48px;
+  text-align: right;
+  margin-right: 80px;
+}
+
 .left {
   width: 800px;
 }
