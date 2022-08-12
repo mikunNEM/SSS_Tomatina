@@ -2,7 +2,7 @@ const symbol = require('/node_modules/symbol-sdk')
 
 const GENERATION_HASH = '57F7DA205008026C776CB6AED843393F04CD458E0AA2D9F1D5F31A402072B2D6'
 const EPOCH = 1615853185
-const XYM_ID = '6BED913FA20223F8'
+const MOSAIC_ID = '6BED913FA20223F8'
 const NODE_URL = 'https://symbol-mikun.net:3001'
 const NET_TYPE = symbol.NetworkType.MAIN_NET
 
@@ -22,7 +22,7 @@ accountHttp.getAccountInfo(address)
   .toPromise()
   .then((accountInfo) => {
     for (let m of accountInfo.mosaics) {
-      if (m.id.id.toHex() === XYM_ID) {
+      if (m.id.id.toHex() === MOSAIC_ID) {
         const dom_xym = document.getElementById('wallet-xym')
         dom_xym.innerText = `XYM Balance : ${m.amount.compact() / Math.pow(10, 6)}`
       }
@@ -240,7 +240,7 @@ function handleSSS() {
     symbol.Address.createFromRawAddress(addr),
     [
       new symbol.Mosaic(
-        new symbol.MosaicId(XYM_ID),
+        new symbol.MosaicId(MOSAIC_ID),
         symbol.UInt64.fromUint(Number(amount)*1000000)
       )
     ],
