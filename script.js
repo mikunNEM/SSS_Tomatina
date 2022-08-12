@@ -241,7 +241,7 @@ function handleSSS() {
     [
       new symbol.Mosaic(
         new symbol.MosaicId(MOSAIC_ID),
-        symbol.UInt64.fromUint(Number(amount)*1000000)
+        symbol.UInt64.fromUint(Number(amount))
       )
     ],
     symbol.PlainMessage.create(message),
