@@ -54,7 +54,7 @@ accountHttp.getAccountInfo(address)
         //受信後の処理を記述
         console.log(tx);
          // 承認音を鳴らす
-        var my_audio = new Audio("https://github.com/mikunNEM/SSS_tomato/blob/main/sound/tomatina.mp3");
+        var my_audio = new Audio("https://github.com/mikunNEM/SSS_tomato/sound/tomatina.mp3");
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
         my_audio.play();  //サウンドを再生      
     });
