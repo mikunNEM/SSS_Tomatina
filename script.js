@@ -57,7 +57,7 @@ accountHttp.getAccountInfo(address)
         var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding2.ogg");
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
         my_audio.play();  //サウンドを再生
-      　location.reload(); //ページをリロードする
+        location.reload(true); // ページをリロードする
     });
 
     //未承認トランザクションの検知
