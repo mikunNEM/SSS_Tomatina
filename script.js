@@ -2,7 +2,7 @@ const symbol = require('/node_modules/symbol-sdk')
 
 const GENERATION_HASH = '57F7DA205008026C776CB6AED843393F04CD458E0AA2D9F1D5F31A402072B2D6'
 const EPOCH = 1615853185
-const MOSAIC_ID = '6BED913FA20223F8'
+const MOSAIC_ID = '310378C18A140D1B'
 const NODE_URL = 'https://symbol-mikun.net:3001'
 const NET_TYPE = symbol.NetworkType.MAIN_NET
 
