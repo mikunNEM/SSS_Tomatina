@@ -58,9 +58,9 @@ accountHttp.getAccountInfo(address)
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
         my_audio.play();  //サウンドを再生
       
-        setTimeout(function(){             //2秒待つ
-             console.log("Wait 2 seconds");
-        },2000);
+        setTimeout(function(){             //1.5秒待つ
+             console.log("Wait 1.5 seconds");
+        },1500);
       
         location.reload(true); // ページをリロードする
     });
