@@ -1,4 +1,4 @@
-# SSS_dApps
+# SSS_wallet_test
 
 こちらで書かれているコードは、以下の入門記事を実践したものです。（testnet用）
 
