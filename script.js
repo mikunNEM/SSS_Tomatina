@@ -23,8 +23,8 @@ accountHttp.getAccountInfo(address)
   .then((accountInfo) => {
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === MOSAIC_ID) {
-        const dom_xym = document.getElementById('wallet-xym')
-        dom_xym.innerText = `XYM Balance : ${m.amount.compact() / Math.pow(10, 6)}`
+        const dom_xym = document.getElementById('wallet-tomato')
+        dom_xym.innerText = `Tomato Balance : ${m.amount.compact() / Math.pow(10, 6)}`
       }
     }
   })
