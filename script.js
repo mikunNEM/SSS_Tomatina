@@ -132,10 +132,10 @@ transactionHttp
       console.log(`address.address = ${address.address}`); ////////////////////
      
       if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
-         dom_amount.innerText = `🍅➡️ : ${tx.mosaics[0].amount.lower}`     // 　数量
+         dom_amount.innerText = `🥳➡️🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量
          console.log("1234");
       }else { 
-         dom_amount.innerText = `⬅️🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量 
+         dom_amount.innerText = `🍅➡️😳 : ${tx.mosaics[0].amount.lower}`     // 　数量 
          console.log(5678);
       }
       dom_message.innerText = `Message : ${tx.message.payload}`     // 　メッセージ 
