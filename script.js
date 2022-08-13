@@ -125,11 +125,9 @@ transactionHttp
       
     if (tx.type === 16724) {  
       dom_recipient_address.innerText = `To   : ${tx.recipientAddress.address}`//  文字列の結合　宛先
-      dom_amount.innerText = `Tomato : ${tx.mosaics[0].amount.lower}`     // 　数量 
+      dom_amount.innerText = `🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量 
       dom_message.innerText = `Message : ${tx.message.payload}`     // 　メッセージ 
       
-      //console.log("tx.mosaics.amount = "); /////////////
-      //console.log(tx.mosaics.amount);      /////////////
     }
       
 
