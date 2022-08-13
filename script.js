@@ -129,7 +129,7 @@ transactionHttp
       dom_recipient_address.innerText = `To   : ${tx.recipientAddress.address}`//  文字列の結合　宛先
       
       
-      console.log(`address_a.address = ${address_a.address`}); ////////////////////
+      console.log(`address_a.address = ${address_a.address}`); ////////////////////
      
       if(tx.signer.address.address === address_a.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
          dom_amount.innerText = `🍅➡️ : ${tx.mosaics[0].amount.lower}`     // 　数量
