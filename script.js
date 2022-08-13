@@ -15,7 +15,7 @@ setTimeout(() => {
   
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
 
-console.log(`123address= ${address}`);////////////////////////////////////////////
+console.log(`123address= ${address[0]}`);////////////////////////////////////////////
 
 const dom_addr = document.getElementById('wallet-addr')
 dom_addr.innerText = address.pretty()                                       // address.pretty() アドレスがハイフンで区切られた文字列で表示され見やすくなる
