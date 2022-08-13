@@ -130,7 +130,7 @@ transactionHttp
       if(tx.signer.address.address === address) {
          dom_amount.innerText = `🍅➡️ : ${tx.mosaics[0].amount.lower}`     // 　数量     
       }else { 
-         dom_amount.innerText = `➡️🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量 
+         dom_amount.innerText = `⬅️🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量 
       }
       dom_message.innerText = `Message : ${tx.message.payload}`     // 　メッセージ 
       
