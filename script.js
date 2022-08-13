@@ -10,12 +10,19 @@ const repositoryFactory = new symbol.RepositoryFactoryHttp(NODE_URL)       // Re
 const accountHttp = repositoryFactory.createAccountRepository()
 const transactionHttp = repositoryFactory.createTransactionRepository()
 
+///////////////////////////////////////////////////////////////////
+const start = document.getElementById('start'); // 自動でクリック処理
+
+    function startTest () {
+        start.click();
+        console.log('Tomatinaへようこそ');
+    }
+    startTest();
+///////////////////////////////////////////////////////////////////
 
 setTimeout(() => {
   
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
-  
-//const address_a = JSON.stringify(address);                //[object object] をstring化する （アドレスチェック用: address_a）
 
 const dom_addr = document.getElementById('wallet-addr')
 dom_addr.innerText = address.pretty()                                       // address.pretty() アドレスがハイフンで区切られた文字列で表示され見やすくなる
@@ -92,18 +99,11 @@ const searchCriteria = {
   order: symbol.Order.Desc,
 }
 
-console.log("searchCriteria=");  //////////////////
-console.log(searchCriteria);    //////////////////
-  
-console.log("transactionHttp=");/////////////////
-console.log(transactionHttp);   //////////////////
 
 transactionHttp
   .search(searchCriteria)
   .toPromise()
   .then((txs) => {
-    console.log("txs=");         /////////////////
-    console.log(txs);           /////////////////
     const dom_txInfo = document.getElementById('wallet-transactions')
     
     console.log("dom_txInfo="); ////////////////
@@ -111,7 +111,7 @@ transactionHttp
     
     for (let tx of txs.data) {   //    配列をループ処理
       console.log("tx=");      ////////////////////
-      console.log(tx);
+      console.log(tx);        ////////////////////
       const dom_tx = document.createElement('div')
       const dom_txType = document.createElement('div')
       const dom_hash = document.createElement('div')
@@ -133,10 +133,8 @@ transactionHttp
      
       if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
          dom_amount.innerText = `🥳➡️🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量
-         console.log("1234");
       }else { 
          dom_amount.innerText = `🍅➡️😳 : ${tx.mosaics[0].amount.lower}`     // 　数量 
-         console.log(5678);
       }
       dom_message.innerText = `Message : ${tx.message.payload}`     // 　メッセージ 
       
