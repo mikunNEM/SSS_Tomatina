@@ -10,15 +10,6 @@ const repositoryFactory = new symbol.RepositoryFactoryHttp(NODE_URL)       // Re
 const accountHttp = repositoryFactory.createAccountRepository()
 const transactionHttp = repositoryFactory.createTransactionRepository()
 
-///////////////////////////////////////////////////////////////////
-const start = document.getElementById('start'); // 自動でクリック処理
-
-    function startTest () {
-        start.click();
-        console.log('Tomatinaへようこそ');
-    }
-    startTest();
-///////////////////////////////////////////////////////////////////
 
 setTimeout(() => {
   
