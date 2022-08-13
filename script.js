@@ -126,12 +126,9 @@ transactionHttp
     if (tx.type === 16724) {  
       dom_recipient_address.innerText = `To   : ${tx.recipientAddress.address}`//  文字列の結合　宛先
       
-      console.log("address= tx.signer.address.address");
-      console.log(address);
-      console.log(tx.signer.address.address);
      
       if(tx.signer.address.address === address) {
-         dom_amount.innerText = `🍅→ : ${tx.mosaics[0].amount.lower}`     // 　数量     
+         dom_amount.innerText = `三╰( `•ω•)╮-=ﾆ=ﾟ｡🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量     
       }else { 
          dom_amount.innerText = `→🍅 : ${tx.mosaics[0].amount.lower}`     // 　数量 
       }
