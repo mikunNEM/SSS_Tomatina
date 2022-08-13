@@ -15,8 +15,7 @@ setTimeout(() => {
   
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
   
-const address_a = JSON.stringify(address);/////////////////////
-console.log(`address_a : ${address_a}`);//////////////////////
+const address_a = JSON.stringify(address);                //[object object] をstring化する （アドレスチェック用: address_a）
 
 const dom_addr = document.getElementById('wallet-addr')
 dom_addr.innerText = address.pretty()                                       // address.pretty() アドレスがハイフンで区切られた文字列で表示され見やすくなる
@@ -129,11 +128,8 @@ transactionHttp
     if (tx.type === 16724) {  
       dom_recipient_address.innerText = `To   : ${tx.recipientAddress.address}`//  文字列の結合　宛先
       
-      
-        console.log(`tx.signer.address.address = ${tx.signer.address.address}`);//////////////////////
-        console.log(`address = ${address}`);                                    //////////////////////
      
-      if(tx.signer.address.address === address) {
+      if(tx.signer.address.address === address_a.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
          dom_amount.innerText = `🍅➡️ : ${tx.mosaics[0].amount.lower}`     // 　数量
          console.log("1234");
       }else { 
