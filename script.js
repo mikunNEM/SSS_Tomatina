@@ -116,7 +116,7 @@ transactionHttp
       dom_hash.innerHTML = `Tx Hash : <a href="https://symbol.fyi/transactions/${tx.transactionInfo.hash}" target="_blank" rel="noopener noreferrer"><small>${tx.transactionInfo.hash}</small></a>`;
       dom_signer_address.innerText = `From : ${tx.signer.address.address}`;    //  文字列の結合　送信者
       
-    if (tx.type === 16724) {  
+    if (tx.type === 16724) {  // Transfer の時だけ実行する
       dom_recipient_address.innerText = `To   : ${tx.recipientAddress.address}`;//  文字列の結合　宛先
       
       
@@ -129,24 +129,25 @@ transactionHttp
       }
       dom_message.innerText = `Message : ${tx.message.payload}`;     // 　メッセージ 
       
-    }
     
-    　if (tx.mosaics[0].id.id.lower === 2316569883) { //tomatoモザイクの時だけ表示する
+    　 if (tx.mosaics[0].id.id.lower === 2316569883) { //tomatoモザイクの時だけ表示する
 
-     　 dom_tx.appendChild(dom_txType);                    // dom_txType をdom_txに追加 
-     　 dom_tx.appendChild(dom_hash);                      // dom_hash をdom_txに追加
-     　 dom_tx.appendChild(dom_signer_address);
+     　  dom_tx.appendChild(dom_txType);                    // dom_txType をdom_txに追加 
+     　  dom_tx.appendChild(dom_hash);                      // dom_hash をdom_txに追加
+     　  dom_tx.appendChild(dom_signer_address);
     
-     　 if (tx.type === 16724) { 
-     　   dom_tx.appendChild(dom_recipient_address);
-     　   dom_tx.appendChild(dom_amount);
-     　   dom_tx.appendChild(dom_message);
-    　  }
+     　  if (tx.type === 16724) { 
+     　    dom_tx.appendChild(dom_recipient_address);
+     　    dom_tx.appendChild(dom_amount);
+     　    dom_tx.appendChild(dom_message);
+    　   }
       
-    　  dom_tx.appendChild(document.createElement('hr'));  // 水平線を引く
+    　   dom_tx.appendChild(document.createElement('hr'));  // 水平線を引く
 
-    　  dom_txInfo.appendChild(dom_tx);                    // トランザクション情報を追加
-   　 }
+    　   dom_txInfo.appendChild(dom_tx);                    // トランザクション情報を追加
+        
+   　   }
+      }
     }
   })
 }, 500)
