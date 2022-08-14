@@ -136,11 +136,11 @@ transactionHttp
      　  dom_tx.appendChild(dom_hash);                      // dom_hash をdom_txに追加
      　  dom_tx.appendChild(dom_signer_address);
     
-     　  if (tx.type === 16724) { 
-     　    dom_tx.appendChild(dom_recipient_address);
-     　    dom_tx.appendChild(dom_amount);
-     　    dom_tx.appendChild(dom_message);
-    　   }
+     　   
+     　  dom_tx.appendChild(dom_recipient_address);
+     　  dom_tx.appendChild(dom_amount);
+     　  dom_tx.appendChild(dom_message);
+    　   
       
     　   dom_tx.appendChild(document.createElement('hr'));  // 水平線を引く
 
