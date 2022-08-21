@@ -56,13 +56,10 @@ accountHttp.getAccountInfo(address)
          // 承認音を鳴らす
         var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding2.ogg");
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-        my_audio.play();  //サウンドを再生
-      
-       // setTimeout(function(){             //1秒待つ
-       //      console.log("Wait 1 seconds");
-       // },1000);
-      
-        //location.reload(true); // ページをリロードする
+      if (tx.mosaics[0].id.id.lower === 2316569883) { // tomataoモザイクの時鳴らす
+         my_audio.play();  //サウンドを再生
+      }
+       
     });
 
     //未承認トランザクションの検知
@@ -74,7 +71,9 @@ accountHttp.getAccountInfo(address)
         var my_audio = new Audio("https://github.com/mikunNEM/SSS_tomato/blob/main/tomatina.ogg?raw=true");  // トマティーナ
         //var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding.ogg");
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-        my_audio.play();  //サウンドを再生   
+      if (tx.mosaics[0].id.id.lower === 2316569883) { // tomatoモザイクの時鳴らす
+        my_audio.play();  //サウンドを再生  
+      }  
     });   
   });
   
