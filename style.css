@@ -10,32 +10,6 @@ h1 {
   margin-right: 80px;
 }
 
-
-/*-------------------------
-  右から左に流れるテキスト
--------------------------*/
-//.top-text {
-//    margin:0 1em 3em;
-//    border-radius:0.5em;    /*角丸*/
-//    background:#f00;        /*背景色*/
-//    overflow:hidden;
-//}
-
-//.top-text p {
-//    margin:0;
-//    font-size:1.5em;         /*文字サイズ*/
-//    color:#fff;              /*文字の色*/
-//    animation: flowing 20s linear infinite;    /*アニメーション*/
-//    transform:translateX(100%);                /*最初の位置*/
-//}
-
-//@keyframes flowing {
-//  100% {
-//    transform:translateX(-100%);    /*終了の位置*/
-//  }
-
-//////////
-
 h2 {
   color:rgb(205, 0, 255);
   font-size: 32px;
