@@ -1,3 +1,16 @@
+body {
+  //background: rgb(190, 34, 211);
+  background-image:url("https://github.com/mikunNEM/SSS_tomato/blob/main/tomato.png?raw=true");
+}
+
+h1 {
+  color:rgb(255, 255, 0);
+  font-size: 96px;
+  text-align: right;
+  margin-right: 80px;
+}
+
+
 /*-------------------------
   右から左に流れるテキスト
 -------------------------*/
@@ -12,7 +25,7 @@
     margin:0;
     font-size:1.5em;         /*文字サイズ*/
     color:#fff;              /*文字の色*/
-    animation: flowing 10s linear infinite;    /*アニメーション*/
+    animation: flowing 20s linear infinite;    /*アニメーション*/
     transform:translateX(100%);                /*最初の位置*/
 }
 
@@ -21,17 +34,7 @@
     transform:translateX(-100%);    /*終了の位置*/
   }
 
-body {
-  //background: rgb(190, 34, 211);
-  background-image:url("https://github.com/mikunNEM/SSS_tomato/blob/main/tomato.png?raw=true");
-}
-
-h1 {
-  color:rgb(255, 255, 0);
-  font-size: 96px;
-  text-align: right;
-  margin-right: 80px;
-}
+//////////
 
 h2 {
   color:rgb(205, 0, 255);
