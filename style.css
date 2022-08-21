@@ -11,7 +11,7 @@ display : inline-block;
 padding-left: 100%;
 white-space : nowrap;
 line-height : 1em;
-animation : scrolltopto-text 20s linear infinite;
+animation : scrolltop-text 20s linear infinite;
 }
 @keyframes scrolltop-text{
 0% { transform: translateX(0)}
