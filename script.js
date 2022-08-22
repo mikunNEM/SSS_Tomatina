@@ -58,6 +58,7 @@ accountHttp.getAccountInfo(address)
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
       if (tx.mosaics[0].id.id.lower === 2316569883) { // tomataoモザイクの時鳴らす
          my_audio.play();  //サウンドを再生
+         location.reload() // ページをリロード
       }
        
     });
@@ -140,7 +141,7 @@ transactionHttp
       }
     }
   })
-}, 500)
+}, 1000)
 
 // Transaction Type を返す関数
 function getTransactionType (type) { // https://symbol.github.io/symbol-sdk-typescript-javascript/1.0.3/enums/TransactionType.html
