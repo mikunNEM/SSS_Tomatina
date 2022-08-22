@@ -141,7 +141,7 @@ transactionHttp
       }
     }
   })
-}, 2000)
+}, 3000)
 
 // Transaction Type を返す関数
 function getTransactionType (type) { // https://symbol.github.io/symbol-sdk-typescript-javascript/1.0.3/enums/TransactionType.html
