@@ -24,7 +24,7 @@ accountHttp.getAccountInfo(address)
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === MOSAIC_ID) {
         const dom_xym = document.getElementById('wallet-tomato');
-        dom_xym.innerText = `🍅 : ${m.amount.compact()}`;    // Tomato Balance
+        dom_xym.innerText = `🍅🍅🍅 : ${m.amount.compact()}`;    // Tomato Balance
       }
     }
     for (let m of accountInfo.mosaics) {
