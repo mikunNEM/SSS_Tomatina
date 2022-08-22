@@ -58,7 +58,7 @@ accountHttp.getAccountInfo(address)
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
       if (tx.mosaics[0].id.id.lower === 2316569883) { // tomataoモザイクの時鳴らす
          my_audio.play();  //サウンドを再生
-         location.reload() // ページをリロード
+         window.setTimeout(location.reload(),5000); // 5秒後にページをリロード
       }
        
     });
