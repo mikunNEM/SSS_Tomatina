@@ -24,13 +24,13 @@ accountHttp.getAccountInfo(address)
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === MOSAIC_ID) {
         const dom_xym = document.getElementById('wallet-tomato');
-        dom_xym.innerText = `Tomato Balance : ${m.amount.compact()}`;    // Tomato Balance
+        dom_xym.innerText = `🍅 : ${m.amount.compact()}`;    // Tomato Balance
       }
     }
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === '6BED913FA20223F8') {
         const dom_xym = document.getElementById('xym-balance');
-        dom_xym.innerText = `XYM Balance : ${m.amount.compact()/1000000}`;       // XYM Balance
+        dom_xym.innerText = `XYM : ${m.amount.compact()/1000000}`;       // XYM Balance
       }
     }
   })
