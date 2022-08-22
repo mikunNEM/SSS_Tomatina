@@ -30,7 +30,7 @@ accountHttp.getAccountInfo(address)
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === '6BED913FA20223F8') {
         const dom_xym = document.getElementById('xym-balance');
-        dom_xym.innerText = `XYM Balance : ${m.amount.compact()}`;       // XYM Balance
+        dom_xym.innerText = `XYM Balance : ${m.amount.compact()/1000000}`;       // XYM Balance
       }
     }
   })
