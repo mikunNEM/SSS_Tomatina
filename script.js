@@ -267,7 +267,6 @@ function handleSSS() {
   })
 }
 
-
  // ポップアップ 表示
   window.onload = function() {
    var popup = document.getElementById('js-popup');
@@ -288,3 +287,4 @@ function handleSSS() {
        popup.classList.remove('is-show');            
      })
    }
+}
