@@ -6,6 +6,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>
 <body>
+   <div class="SSS_link"> 
+       <a href="https://note.com/mikun_nem/n/n63ce4b15f859" target="_blank">SSS_Extension の使い方</a>
+   </div>
+
   <h1>Tomatina wallet</h1>
   <div class="wrapper">
       <div class="left">
@@ -17,7 +21,12 @@
             <div id="wallet-addr"></div>
           </div>
           <div class="container" style="color:blue;">
-            <div id="wallet-tomato"></div>
+            <div id="xembook-tomato"></div>
+            <div id="shizui-tomato"></div>
+            <div id="tenxym-tomato"></div>
+            <div id="toshi-tomato"></div>
+            <div id="pasomi-tomato"></div>
+            <div id="nononon-tomato"></div>
             <div id="xym-balance"></div>
           </div>
           
@@ -26,6 +35,19 @@
         <div class="sender-card">
           <h2>三╰( `•ω•)╮-=ﾆ=ﾟ｡🍅🍅🍅</h2>
           
+          <div class="textfiled-wrapper">
+            <div>Select / 🍅選択: (保有していない🍅は送れません)</div>
+
+            <select id="tomato4">
+            <option value="310378C18A140D1B">📖🍅xembook</option>
+            <option value="5A8F12439B09B33E">🦷🍅shizui</option>
+            <option value="717C14465A99FBA4">🎮🍅tenxym</option>
+            <option value="613E6D0FC11F4530">🦁🍅toshi</option>
+            <option value="581B528745FE0F3B">🖥🍅pasomi</option>
+            <option value="22EB02FCBC661527">🐰🍅nononon</option>  
+            </select>
+            
+          </div>
           <div class="textfiled-wrapper">
             <div>Recipient Address / 宛先</div>
             <input type="text" id="form-addr" class="textfiled" />
@@ -47,7 +69,7 @@
       </div>
       <div class="right">
         <div class="tx-card">
-          <h2>Tx History (xembook.tomato) / 履歴</h2>
+          <h2>Tx History / 履歴 (Aggregate Tx は未対応です)</h2>
           <div id="wallet-transactions"></div>
         </div>
       </div>
@@ -55,7 +77,7 @@
 
   <script type="text/javascript" src="https://xembook.github.io/nem2-browserify/symbol-sdk-pack-1.0.3.js"></script>
   <script type="text/javascript" src="script.js"></script>
-  
+    
   
   <div class="popup" id="js-popup">
    <div class="popup-inner">
