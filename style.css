@@ -3,6 +3,12 @@ body {
   background-image:url("https://github.com/mikunNEM/SSS_tomato/blob/main/tomato.png?raw=true");
 }
 
+.SSS_link {
+        background: rgb(255, 255, 255,0.8);
+        font-size: 30px;
+        text-align: center;
+}
+
 h1 {
   color:rgb(255, 255, 0);
   font-size: 96px;
@@ -70,14 +76,44 @@ h2 {
   font-size: 24px;                 // ウォレットアドレスの文字サイズ
 }
 
-#wallet-tomato {
-  text-align: right;
-  font-size: 40px;
+#xembook-tomato {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#shizui-tomato {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#tenxym-tomato {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#toshi-tomato {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#pasomi-tomato {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#nononon-tomato {
+  text-align: left;
+  font-size: 30px;
   font-weight: 700;
 }
 
 #xym-balance {
-  text-align: right;
+  text-align: left;
   font-size: 20px;
   font-weight: 700;
 }
@@ -92,8 +128,6 @@ h2 {
   justify-content: space-between;
   margin: 80px;
 }
-
-
 
 .popup {
   position: fixed;
@@ -116,7 +150,7 @@ h2 {
   top: 50%;
   transform: translate(-50%,-50%);
   width: 80%;
-  max-width: 400px;
+  max-width: 200px;
   padding: 50px;
   background-color: #fff;
   z-index: 2;
