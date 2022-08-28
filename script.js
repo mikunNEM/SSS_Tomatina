@@ -2,7 +2,7 @@ const symbol = require('/node_modules/symbol-sdk');
 
 const GENERATION_HASH = '57F7DA205008026C776CB6AED843393F04CD458E0AA2D9F1D5F31A402072B2D6';
 const EPOCH = 1615853185;
-const MOSAIC_ID = '310378C18A140D1B';
+//const MOSAIC_ID = '310378C18A140D1B';
 const NODE_URL = 'https://symbol-mikun.net:3001';
 const NET_TYPE = symbol.NetworkType.MAIN_NET;
 
@@ -22,9 +22,39 @@ accountHttp.getAccountInfo(address)
   .toPromise()
   .then((accountInfo) => {
     for (let m of accountInfo.mosaics) {
-      if (m.id.id.toHex() === MOSAIC_ID) {
-        const dom_xym = document.getElementById('wallet-tomato');
-        dom_xym.innerText = `🍅🍅🍅 : ${m.amount.compact()}`;           // Tomato Balance
+      if (m.id.id.toHex() === '310378C18A140D1B') {
+        const dom_xym = document.getElementById('xembook-tomato');
+        dom_xym.innerText = `📖🍅 : ${m.amount.compact()}`;    // Tomato Balance
+      }
+    }
+    for (let m of accountInfo.mosaics) {
+      if (m.id.id.toHex() === '5A8F12439B09B33E') {
+        const dom_xym = document.getElementById('shizui-tomato');
+        dom_xym.innerText = `🦷🍅 : ${m.amount.compact()}`;       // shizui.tomato
+      }
+    }
+    for (let m of accountInfo.mosaics) {
+      if (m.id.id.toHex() === '717C14465A99FBA4') {
+        const dom_xym = document.getElementById('tenxym-tomato');
+        dom_xym.innerText = `🎮🍅 : ${m.amount.compact()}`;       // tenxym.tomato
+      }
+    }
+    for (let m of accountInfo.mosaics) {
+      if (m.id.id.toHex() === '613E6D0FC11F4530') {
+        const dom_xym = document.getElementById('toshi-tomato');
+        dom_xym.innerText = `🦁🍅 : ${m.amount.compact()}`;       // toshi.tomato
+      }
+    }
+    for (let m of accountInfo.mosaics) {
+      if (m.id.id.toHex() === '581B528745FE0F3B') {
+        const dom_xym = document.getElementById('pasomi-tomato');
+        dom_xym.innerText = `🖥🍅 : ${m.amount.compact()}`;       // toshi.tomato
+      }
+    }
+    for (let m of accountInfo.mosaics) {
+      if (m.id.id.toHex() === '22EB02FCBC661527') {
+        const dom_xym = document.getElementById('nononon-tomato');
+        dom_xym.innerText = `🐰🍅 : ${m.amount.compact()}`;       // toshi.tomato
       }
     }
     for (let m of accountInfo.mosaics) {
@@ -62,9 +92,9 @@ accountHttp.getAccountInfo(address)
          // 承認音を鳴らす
         var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding2.ogg");
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-      if (tx.mosaics[0].id.id.lower === 2316569883) { // tomataoモザイクの時鳴らす
+      if (tx.mosaics[0].id.id.lower === 2316569883 || 2601104190 || 1520040868 || 3240052016 || 1174277947 || 3160806695) { // tomataoモザイクの時鳴らす
          my_audio.play();  //サウンドを再生
-         window.setTimeout(function(){location.reload();},2000); // 2秒後にページをリロード
+         window.setTimeout(function(){location.reload(false);},2000); // 2秒後にキャッシュを利用してページをリロード
       }
        
     });
@@ -78,7 +108,7 @@ accountHttp.getAccountInfo(address)
         var my_audio = new Audio("https://github.com/mikunNEM/SSS_tomato/blob/main/tomatina.ogg?raw=true");  // トマティーナ
         //var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding.ogg");
         my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-      if (tx.mosaics[0].id.id.lower === 2316569883) { // tomatoモザイクの時鳴らす
+      if (tx.mosaics[0].id.id.lower === 2316569883 || 2601104190 || 1520040868 || 3240052016 || 1174277947 || 3160806695) { // tomatoモザイクの時鳴らす
         my_audio.play();  //サウンドを再生  
       }  
     });   
@@ -122,19 +152,64 @@ transactionHttp
       dom_hash.innerHTML = `Tx Hash : <a href="https://symbol.fyi/transactions/${tx.transactionInfo.hash}" target="_blank" rel="noopener noreferrer"><small>${tx.transactionInfo.hash}</small></a>`;
       dom_signer_address.innerText = `From : ${tx.signer.address.address}`;    //  文字列の結合　送信者
       
+      
     if (tx.type === 16724) {  // Transfer の時だけ実行する
       
       dom_recipient_address.innerText = `To   : ${tx.recipientAddress.address}`;//  文字列の結合　宛先
-     
-      if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
-         dom_amount.innerHTML = `<font color="#FF0000">🥳➡️🍅 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
-      }else { 
-         dom_amount.innerHTML = `<font color="#008000">🍅➡️😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
-      }
+      
+     switch(tx.mosaics[0].id.id.lower){      
+      case 2316569883: //📖
+        if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
+           dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 📖🍅xembook : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
+        }else { 
+           dom_amount.innerHTML = `<font color="#008000">📖🍅xembook ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
+        }
+        break;
+      
+      case 2601104190: //🦷   
+        if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
+           dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 🦷🍅shizui : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
+        }else { 
+           dom_amount.innerHTML = `<font color="#008000">🦷🍅shizui ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
+        }
+        break;
+      
+      case 1520040868:  //🎮
+        if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
+           dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 🎮🍅tenxym : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
+        }else { 
+           dom_amount.innerHTML = `<font color="#008000">🎮🍅tenxym ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
+        }
+        break;
+      case 3240052016: //🦁  
+        if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
+           dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 🦁🍅toshi : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
+        }else { 
+           dom_amount.innerHTML = `<font color="#008000">🦁🍅toshi ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
+        }
+        break;
+      case 1174277947: //🖥
+        if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
+           dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 🖥🍅pasomi : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
+        }else { 
+           dom_amount.innerHTML = `<font color="#008000">🖥🍅pasomi ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
+        }
+      case 3160806695: //🐰
+        if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
+           dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 🐰🍅nononon : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
+        }else { 
+           dom_amount.innerHTML = `<font color="#008000">🐰🍅nononon ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量 
+        }        
+        default:
+        console.log("不明なトマトモザイクです"); 
+        break;  
+     }
+      
+      
       dom_message.innerText = `Message : ${tx.message.payload}`;     // 　メッセージ 
       
     
-    　 if (tx.mosaics[0].id.id.lower === 2316569883) { //tomatoモザイクの時だけ表示する
+       if (tx.mosaics[0].id.id.lower === 2316569883 || 2601104190 || 1520040868 || 3240052016 || 1174277947 || 3160806695) { //tomatoモザイクの時だけ表示する
      　  dom_tx.appendChild(dom_txType);                    // dom_txType をdom_txに追加 
      　  dom_tx.appendChild(dom_hash);                      // dom_hash をdom_txに追加
      　  dom_tx.appendChild(dom_signer_address);            // dom_signer_address をdom_txに追加
@@ -235,10 +310,12 @@ function getTransactionType (type) { // https://symbol.github.io/symbol-sdk-type
   }
 }
 
+
 // handleSSS関数はトランザクションを作成し、window.SSS.setTransaction関数を実行しSSSにトランザクションを登録します。そしてwindow.SSS.requestSign関数を実行し、SSSを用いた署名をユーザ－に要求します。
 
 function handleSSS() {
   console.log('handle sss');
+  const MOSAIC_ID = document.getElementById('tomato4').value;
   const addr = document.getElementById('form-addr').value;
   const amount = document.getElementById('form-amount').value;
   const message = document.getElementById('form-message').value;
@@ -267,8 +344,8 @@ function handleSSS() {
   })
 }
 
- // ポップアップ 表示
-  window.onload = function() {
+   // ポップアップ 表示
+window.onload = function() {
    var popup = document.getElementById('js-popup');
     
     if(!popup) return;   
@@ -287,4 +364,4 @@ function handleSSS() {
        popup.classList.remove('is-show');            
      })
    }
-}
+ }
