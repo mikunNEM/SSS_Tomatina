@@ -66,7 +66,7 @@ accountHttp.getAccountInfo(address)
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === '509A58B6FDFFC197') {
         const dom_xym = document.getElementById('hanabatake-tomato');
-        dom_xym.innerText = `🌻🍅 : ${m.amount.compact()} / hanabatake`;       // hanabatake.tomato
+        dom_xym.innerText = `🌻🍅 : ${m.amount.compact()} / hanabatake`;      // hanabatake.tomato
       }
     }
     for (let m of accountInfo.mosaics) {
