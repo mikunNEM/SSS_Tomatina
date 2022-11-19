@@ -66,7 +66,7 @@ accountHttp.getAccountInfo(address)
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === '509A58B6FDFFC197') {
         const dom_xym = document.getElementById('hanabatake-tomato');
-        dom_xym.innerText = `🌻🍅 : ${m.amount.compact()} / hanabatake`;      // hanabatake.tomato
+        dom_xym.innerText = `🌻🍅 : ${m.amount.compact()} / hanabatake`;       // hanabatake.tomato
       }
     }
     for (let m of accountInfo.mosaics) {
@@ -304,6 +304,7 @@ transactionHttp
       const dom_recipient_address = document.createElement('div');
       const dom_amount = document.createElement('div');
       const dom_message = document.createElement('div');
+      const dom_date = document.createElement('div');
 
       dom_txType.innerText = `Tx Type : ${getTransactionType(tx.type)}`;        //　文字列の結合 　Tx タイプ
       //dom_hash.innerText = `Tx Hash : ${tx.transactionInfo.hash}`;              //  文字列の結合　 Tx ハッシュ
@@ -479,7 +480,7 @@ transactionHttp
            dom_amount.innerHTML = `<font color="#008000">🪓🍅hatchet.tomato ➡️ 😳 : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
         }
         break;    
-      case "078FA8E61BB9BE9C": //❔
+      case "078FA8E61BB9BE9C": //🐂
         if(tx.signer.address.address === address.address) {  // 送信アドレスとウォレットのアドレスが同じかどうかで表示を変える
            dom_amount.innerHTML = `<font color="#FF0000">🥳 ➡️ 🐂🍅jammin.tomato : ${tx.mosaics[0].amount.lower}</font>`;     // 　数量
         }else { 
@@ -543,11 +544,35 @@ transactionHttp
       
       
       dom_message.innerText = `Message : ${tx.message.payload}`;     // 　メッセージ 
+     
+      
+      console.log("timestamp=");                                                ///////////　　  　timestamp to Date 　　　　　　　//////////
+      const timestamp = EPOCH + (parseInt(tx.transactionInfo.timestamp.toHex(), 16)/1000);   /////////////// Unit64 を 16進数に　変換したあと10進数に変換　
+      const date = new Date(timestamp * 1000);
+      console.log(date.getTime());
+      
+      const yyyy = `${date.getFullYear()}`;
+      // .slice(-2)で文字列中の末尾の2文字を取得する
+      // `0${date.getHoge()}`.slice(-2) と書くことで０埋めをする
+      const MM = `0${date.getMonth() + 1}`.slice(-2); // getMonth()の返り値は0が基点
+      const dd = `0${date.getDate()}`.slice(-2);
+      const HH = `0${date.getHours()}`.slice(-2);
+      const mm = `0${date.getMinutes()}`.slice(-2);
+      const ss = `0${date.getSeconds()}`.slice(-2);
+
+      const ymdhms = `${yyyy}-${MM}-${dd} ${HH}:${mm}:${ss}　　　　`;
+      
+      console.log(ymdhms);
+      
+      dom_date.innerHTML = `<font color="#0000ff"><p style="text-align: right">${ymdhms}</p></font>`;    //　日付  右寄せ
+      
+           
       
        const M_ID = tx.mosaics[0].id.toHex();
     
        if (M_ID === "310378C18A140D1B" || M_ID === "5A8F12439B09B33E" || M_ID === "717C14465A99FBA4" || M_ID === "613E6D0FC11F4530" || M_ID === "581B528745FE0F3B" || M_ID === "22EB02FCBC661527" || M_ID === "725A2499CC6614D9" || M_ID === "509A58B6FDFFC197" || M_ID === "0B7766A119D5E4B5" || M_ID === "54ACEAF1E8632DF1" || M_ID === "0C1058BB20787615" || M_ID === "23A72A2876482029" || M_ID === "5FF7741F1AE008DE" || M_ID === "220DE9C58B8E0E71" || M_ID === "3F0B0C29CFD04713" || M_ID === "4F2DC8BA863044C6" || M_ID === "7B9DC57CC154B2E0" || M_ID === "14ABF8C934D15151" || M_ID === "3898DDE9567D0A34" || M_ID === "5D9D5C6BFE968E2C" || M_ID === "05E545728E183EFA" || M_ID === "6BE5318AED3E68DB" || M_ID === "7542C49F2737C4DE" || M_ID === "078FA8E61BB9BE9C" || M_ID === "6A44EB5C0F8ED639" || M_ID === "7ADA0B238BB2E29D" || M_ID === "7F1B538B65B0168C" || M_ID === "7930B6BDAED90925" || M_ID === "7691E0E6C687B9C0" || M_ID === "7969D73DA7ECB674" || M_ID === "7A848BE35EA4C849") { //tomatoモザイクの時だけ表示する
-     　  dom_tx.appendChild(dom_txType);                    // dom_txType をdom_txに追加 
+     　  dom_tx.appendChild(dom_date);                     //　dom_date　をdom_txに追加
+         dom_tx.appendChild(dom_txType);                    // dom_txType をdom_txに追加 
      　  dom_tx.appendChild(dom_hash);                      // dom_hash をdom_txに追加
      　  dom_tx.appendChild(dom_signer_address);            // dom_signer_address をdom_txに追加
      　  dom_tx.appendChild(dom_recipient_address);         // dom_recipient_address をdom_txに追加
